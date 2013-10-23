@@ -25,15 +25,23 @@ public class CrimeLab {
 
     private CrimeLab(Context appContext) {
         mAppContext = appContext;
-        mCrimes = new ArrayList<Crime>();
         mSerializer = new CriminalIntentJSONSerializer(mAppContext, FILENAME);
 
-        // generate some example climes, for testing purposes
-        for (int i = 0; i < 4; ++i) {
-            Crime crime = new Crime();
-            crime.setTitle("Crime #" + i);
-            crime.setSolved(i % 2 == 0);    // every other one is solved
-            mCrimes.add(crime);
+//        mCrimes = new ArrayList<Crime>();
+//
+//        // generate some example climes, for testing purposes
+//        for (int i = 0; i < 0; ++i) {
+//            Crime crime = new Crime();
+//            crime.setTitle("Crime #" + i);
+//            crime.setSolved(i % 2 == 0);    // every other one is solved
+//            mCrimes.add(crime);
+//        }
+
+        try {
+            mCrimes = mSerializer.loadCrimes();
+        } catch (Exception e) {
+            mCrimes = new ArrayList<Crime>();
+            Log.e(TAG, "Error loading crimes: ", e);
         }
     }
 

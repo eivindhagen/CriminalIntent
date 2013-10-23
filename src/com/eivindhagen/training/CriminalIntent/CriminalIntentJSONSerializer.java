@@ -50,6 +50,7 @@ public class CriminalIntentJSONSerializer {
         try {
             // open and read
             InputStream in = mContext.openFileInput(mFilename);
+            reader = new BufferedReader(new InputStreamReader(in));
             StringBuilder jsonString = new StringBuilder();
             String line = null;
             while((line = reader.readLine()) != null) {
