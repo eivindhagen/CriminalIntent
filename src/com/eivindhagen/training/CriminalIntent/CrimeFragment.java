@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.NavUtils;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -122,6 +123,20 @@ public class CrimeFragment extends Fragment {
             }
         });
 
+
+        // report (Button)
+        Button reportButton = (Button) v.findViewById(R.id.crime_reportButton);
+        reportButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_TEXT, getCrimeReport());
+                intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.crime_report_subject));
+                Intent chooserIntent = Intent.createChooser(intent, getString(R.string.send_report));
+                startActivity(chooserIntent);
+            }
+        });
+
         return v;
     }
 
@@ -169,5 +184,19 @@ public class CrimeFragment extends Fragment {
             default:
                 return super.onOptionsItemSelected(item);    //To change body of overridden methods use File | Settings | File Templates.
         }
+    }
+
+    private String getCrimeReport() {
+        String solved = getString(mCrime.isSolved() ? R.string.crime_report_solved : R.string.crime_report_unsolved);
+        String dateFormat = "EEE, MMM dd";
+        String date = DateFormat.format(dateFormat, mCrime.getDate()).toString();
+        String suspect = mCrime.getSuspect();
+        if (suspect == null) {
+            suspect = getString(R.string.crime_report_no_suspect);
+        } else {
+            suspect = getString(R.string.crime_report_subject, suspect); // <suspect> is injected at '%s' in string
+        }
+        String report = getString(R.string.crime_report, mCrime.getTitle(), date, solved, suspect);
+        return report;
     }
 }
