@@ -23,7 +23,7 @@ public class CrimeLab {
         mCrimes = new ArrayList<Crime>();
 
         // generate some example climes, for testing purposes
-        for (int i = 0; i < 100; ++i) {
+        for (int i = 0; i < 4; ++i) {
             Crime crime = new Crime();
             crime.setTitle("Crime #" + i);
             crime.setSolved(i % 2 == 0);    // every other one is solved
@@ -36,6 +36,10 @@ public class CrimeLab {
             sCrimeLab = new CrimeLab(c.getApplicationContext());
         }
         return sCrimeLab;
+    }
+
+    public void addCrime(Crime crime) {
+        mCrimes.add(crime);
     }
 
     public ArrayList<Crime> getCrimes() {

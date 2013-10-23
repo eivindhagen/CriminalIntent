@@ -20,6 +20,7 @@ import java.util.UUID;
 public class CrimePagerActivity extends FragmentActivity {
     private ViewPager mViewPager;
     private ArrayList<Crime> mCrimes;
+    private int[] updatedCrimes;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,8 @@ public class CrimePagerActivity extends FragmentActivity {
                 break;
             }
         }
+//        Number crimeListIndex = (Number) getIntent().getSerializableExtra(CrimeFragment.EXTRA_CRIME_LIST_INDEX);
+//        mViewPager.setCurrentItem(crimeListIndex.intValue());
 
         // listen for page change and update the app title
         mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {

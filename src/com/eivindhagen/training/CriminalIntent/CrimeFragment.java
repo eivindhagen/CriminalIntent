@@ -2,13 +2,16 @@ package com.eivindhagen.training.CriminalIntent;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.NavUtils;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -34,6 +37,7 @@ public class CrimeFragment extends Fragment {
     private CheckBox mSolvedCheckBox;
 
     public static final String EXTRA_CRIME_ID = "crime_id";
+    public static final String EXTRA_CRIME_LIST_INDEX = "crime_list_index";
     public static final String DIALOG_DATE = "date";
     public static final int REQUEST_DATE = 201;
 
@@ -50,6 +54,8 @@ public class CrimeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+
 //        mCrime = new Crime();
 //        UUID crimeId = (UUID) getActivity().getIntent().getSerializableExtra(EXTRA_CRIME_ID);
         UUID crimeId = (UUID) getArguments().getSerializable(EXTRA_CRIME_ID);
@@ -59,6 +65,12 @@ public class CrimeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_crime, parent, false /*do not attach to root*/);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            if (NavUtils.getParentActivityName(getActivity()) != null) {
+                getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
+            }
+        }
 
         // title (EditText)
         mTitleField = (EditText) v.findViewById(R.id.crime_title);
@@ -73,7 +85,7 @@ public class CrimeFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 //To change body of implemented methods use File | Settings | File Templates.
-                updateDateOnButton();
+                mCrime.setTitle(s.toString());
                 Log.i("CrimeFragment", "Text changed: " + s.toString());
             }
 
@@ -86,7 +98,7 @@ public class CrimeFragment extends Fragment {
 
         // date (button)
         mDateButton = (Button) v.findViewById(R.id.crime_date);
-        mDateButton.setText(mCrime.getDate().toString());
+        updateDateOnButton();
 //        mDateButton.setEnabled(false);
         mDateButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -98,7 +110,7 @@ public class CrimeFragment extends Fragment {
             }
         });
 
-        // solved (chackbox)
+        // solved (checkbox)
         mSolvedCheckBox = (CheckBox) v.findViewById(R.id.crime_solved);
         mSolvedCheckBox.setChecked(mCrime.isSolved());
         mSolvedCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -127,5 +139,24 @@ public class CrimeFragment extends Fragment {
 
     private void updateDateOnButton() {
         mDateButton.setText(mCrime.getDate().toString());
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+            case android.R.id.home:
+                if (NavUtils.getParentActivityName(getActivity()) != null) {
+                    NavUtils.navigateUpFromSameTask(getActivity());
+                } else {
+                    // this is the old way of doing things...
+                    Intent intent = new Intent(getActivity(), CrimeListActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+//                getActivity().finish();     // this seems to be optional...?
+                }
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);    //To change body of overridden methods use File | Settings | File Templates.
+        }
     }
 }
