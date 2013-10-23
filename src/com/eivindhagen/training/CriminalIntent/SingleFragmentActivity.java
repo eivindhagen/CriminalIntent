@@ -15,13 +15,20 @@ import android.support.v4.app.FragmentManager;
 public abstract class SingleFragmentActivity extends FragmentActivity {
     protected abstract Fragment createFragment();   // create the specific type of fragment in sub-class
 
+    protected int getLayoutResId() {
+//        return R.layout.activity_fragment;
+//        return R.layout.activity_twopane;
+        return R.layout.activity_masterdetail;
+    }
+
     /**
      * Called when the activity is first created.
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fragment);
+//        setContentView(R.layout.activity_fragment);
+        setContentView(getLayoutResId());
 
         FragmentManager fm = getSupportFragmentManager();
         Fragment fragment = fm.findFragmentById(R.id.fragmentContainer);
