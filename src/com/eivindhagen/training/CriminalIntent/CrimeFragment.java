@@ -2,8 +2,11 @@ package com.eivindhagen.training.CriminalIntent;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.NavUtils;
@@ -36,11 +39,14 @@ public class CrimeFragment extends Fragment {
     private EditText mTitleField;
     private Button mDateButton;
     private CheckBox mSolvedCheckBox;
+    private Button mSuspectButton;
 
     public static final String EXTRA_CRIME_ID = "crime_id";
     public static final String EXTRA_CRIME_LIST_INDEX = "crime_list_index";
     public static final String DIALOG_DATE = "date";
+
     public static final int REQUEST_DATE = 201;
+    public static final int REQUEST_CONTACT = 210;
 
     public static CrimeFragment newInstance(UUID crimeId) {
         Bundle args = new Bundle();
@@ -137,6 +143,18 @@ public class CrimeFragment extends Fragment {
             }
         });
 
+        // suspect (Button)
+        mSuspectButton = (Button) v.findViewById(R.id.crime_suspectButton);
+        mSuspectButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
+                startActivityForResult(intent, REQUEST_CONTACT);
+            }
+        });
+        if (mCrime.getSuspect() != null) {
+            mSuspectButton.setText(mCrime.getSuspect());
+        }
+
         return v;
     }
 
@@ -160,6 +178,29 @@ public class CrimeFragment extends Fragment {
             Date date = (Date) data.getSerializableExtra(DatePickerFragment.EXTRA_DATE);
             mCrime.setDate(date);
             updateDateOnButton();
+        } else if (REQUEST_CONTACT == requestId) {
+            Uri contactUri = data.getData();
+
+            // build query for the fields we want to read
+            String[] queryFields = new String[] {
+                ContactsContract.Contacts.DISPLAY_NAME
+            };
+
+            // perform query
+            Cursor cursor = getActivity().getContentResolver().query(contactUri, queryFields, null, null, null);
+
+            // exit if we got nothing
+            if (cursor.getCount() == 0) {
+                cursor.close();
+                return;
+            }
+
+            // extract the first column, the display name
+            cursor.moveToFirst();
+            String suspectName = cursor.getString(0);
+            mCrime.setSuspect(suspectName);
+            mSuspectButton.setText(suspectName);
+            cursor.close();
         }
     }
 
