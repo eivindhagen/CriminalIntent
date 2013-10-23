@@ -126,6 +126,7 @@ public class CrimeListFragment extends ListFragment {
         Log.i("CrimeListFragment", "onPause (before super)");
         super.onPause();
         Log.i("CrimeListFragment", "onPause (after super)");
+        CrimeLab.get(getActivity()).saveCrimes();
     }
 
     @Override
