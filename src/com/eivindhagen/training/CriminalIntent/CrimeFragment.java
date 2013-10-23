@@ -126,6 +126,17 @@ public class CrimeFragment extends Fragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        CrimeLab.get(getActivity()).saveCrimes();
+    }
+
+    @Override
     public void onActivityResult(int requestId, int resultCode, Intent data) {
         if (Activity.RESULT_OK != resultCode) {
             return;

@@ -51,10 +51,10 @@
     <file path="/Dummy.txt" changelist="26101412-f17c-4a2c-abe1-b91cec86b656" time="1382488388122" ignored="false" />
     <file path="/activity_crime.xml" changelist="26101412-f17c-4a2c-abe1-b91cec86b656" time="1382462027808" ignored="false" />
     <file path="/strings.xml" changelist="26101412-f17c-4a2c-abe1-b91cec86b656" time="1382550984710" ignored="false" />
-    <file path="/CrimeFragment.java" changelist="26101412-f17c-4a2c-abe1-b91cec86b656" time="1382553499786" ignored="false" />
-    <file path="/Crime.java" changelist="26101412-f17c-4a2c-abe1-b91cec86b656" time="1382476111686" ignored="false" />
+    <file path="/CrimeFragment.java" changelist="26101412-f17c-4a2c-abe1-b91cec86b656" time="1382556324499" ignored="false" />
+    <file path="/Crime.java" changelist="26101412-f17c-4a2c-abe1-b91cec86b656" time="1382556803453" ignored="false" />
     <file path="/fragment_crime.xml" changelist="26101412-f17c-4a2c-abe1-b91cec86b656" time="1382469133812" ignored="false" />
-    <file path="/CrimeLab.java" changelist="26101412-f17c-4a2c-abe1-b91cec86b656" time="1382551948893" ignored="false" />
+    <file path="/CrimeLab.java" changelist="26101412-f17c-4a2c-abe1-b91cec86b656" time="1382556235130" ignored="false" />
     <file path="/CrimeListFragment.java" changelist="26101412-f17c-4a2c-abe1-b91cec86b656" time="1382555224987" ignored="false" />
     <file path="/SingleFragmentActivity.java" changelist="26101412-f17c-4a2c-abe1-b91cec86b656" time="1382474723595" ignored="false" />
     <file path="/CrimeListActivity.java" changelist="26101412-f17c-4a2c-abe1-b91cec86b656" time="1382547745426" ignored="false" />
@@ -67,6 +67,7 @@
     <file path="/DatePickerFragment.java" changelist="26101412-f17c-4a2c-abe1-b91cec86b656" time="1382497578053" ignored="false" />
     <file path="/dialog_date.xml" changelist="26101412-f17c-4a2c-abe1-b91cec86b656" time="1382488469779" ignored="false" />
     <file path="/fragment_crime_list.xml" changelist="26101412-f17c-4a2c-abe1-b91cec86b656" time="1382554126947" ignored="false" />
+    <file path="/CriminalIntentJSONSerializer.java" changelist="26101412-f17c-4a2c-abe1-b91cec86b656" time="1382556789731" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,10 +195,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CrimeListFragment.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CrimeListFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/eivindhagen/training/CriminalIntent/CrimeListFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="0" selection-start="1839" selection-end="1839" vertical-scroll-proportion="0.33286119">
+            <state line="56" column="0" selection-start="1839" selection-end="1839" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -243,7 +244,7 @@
       <file leaf-file-name="CrimeFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/eivindhagen/training/CriminalIntent/CrimeFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="28" selection-start="1829" selection-end="1829" vertical-scroll-proportion="0.0">
+            <state line="135" column="49" selection-start="4900" selection-end="4900" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3641#4103#0" expanded="true" />
@@ -280,7 +281,7 @@
       <file leaf-file-name="CrimeLab.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/eivindhagen/training/CriminalIntent/CrimeLab.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="29" selection-start="638" selection-end="638" vertical-scroll-proportion="0.0">
+            <state line="54" column="24" selection-start="1543" selection-end="1543" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -288,10 +289,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Crime.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Crime.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/eivindhagen/training/CriminalIntent/Crime.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="13" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0">
+            <state line="51" column="20" selection-start="1411" selection-end="1411" vertical-scroll-proportion="0.35410765">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -324,6 +325,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="CriminalIntentJSONSerializer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/eivindhagen/training/CriminalIntent/CriminalIntentJSONSerializer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="72" column="22" selection-start="2170" selection-end="2170" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1332#1339#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -334,8 +347,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/eivindhagen/training/CriminalIntent/SingleFragmentActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/eivindhagen/training/CriminalIntent/Crime.java" />
         <option value="$PROJECT_DIR$/res/layout/list_item_crime.xml" />
         <option value="$PROJECT_DIR$/src/com/eivindhagen/training/CriminalIntent/CrimeActivity.java" />
         <option value="$PROJECT_DIR$/res/values/ids.xml" />
@@ -344,12 +355,14 @@
         <option value="$PROJECT_DIR$/src/com/eivindhagen/training/CriminalIntent/CrimeListActivity.java" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/res/menu/fragment_crime_list.xml" />
-        <option value="$PROJECT_DIR$/src/com/eivindhagen/training/CriminalIntent/CrimeLab.java" />
         <option value="$PROJECT_DIR$/src/com/eivindhagen/training/CriminalIntent/CrimePagerActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/eivindhagen/training/CriminalIntent/CrimeFragment.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/res/menu-v11/fragment_crime_list.xml" />
         <option value="$PROJECT_DIR$/src/com/eivindhagen/training/CriminalIntent/CrimeListFragment.java" />
+        <option value="$PROJECT_DIR$/src/com/eivindhagen/training/CriminalIntent/CrimeLab.java" />
+        <option value="$PROJECT_DIR$/src/com/eivindhagen/training/CriminalIntent/CrimeFragment.java" />
+        <option value="$PROJECT_DIR$/src/com/eivindhagen/training/CriminalIntent/CriminalIntentJSONSerializer.java" />
+        <option value="$PROJECT_DIR$/src/com/eivindhagen/training/CriminalIntent/Crime.java" />
       </list>
     </option>
   </component>
@@ -1043,7 +1056,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19769292" sideWeight="0.670778" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15393795" sideWeight="0.7049336" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15393795" sideWeight="0.670778" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2542533" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1117,27 +1130,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/layout-land/fragment_crime.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="23" selection-start="606" selection-end="606" vertical-scroll-proportion="-11.666667">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/eivindhagen/training/CriminalIntent/DatePickerFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="39" selection-start="2474" selection-end="2474" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#1667#2144#0" expanded="true" />
-            <element signature="e#2133#2134#0" expanded="true" />
-            <element signature="e#2576#2577#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/android-sdk-macosx/sources/android-16/java/lang/Number.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="22" selection-start="1052" selection-end="1052" vertical-scroll-proportion="0.1266892">
@@ -1185,15 +1177,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/eivindhagen/training/CriminalIntent/CrimeLab.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="29" selection-start="638" selection-end="638" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/eivindhagen/training/CriminalIntent/CrimeListActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="0" selection-start="1114" selection-end="1114" vertical-scroll-proportion="0.0">
@@ -1221,17 +1204,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/eivindhagen/training/CriminalIntent/CrimeFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="28" selection-start="1829" selection-end="1829" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3641#4103#0" expanded="true" />
-            <element signature="e#4092#4093#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="38" selection-start="1189" selection-end="1189" vertical-scroll-proportion="0.0">
@@ -1248,7 +1220,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/eivindhagen/training/CriminalIntent/CrimeListFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="0" selection-start="1839" selection-end="1839" vertical-scroll-proportion="0.33286119">
+        <state line="56" column="0" selection-start="1839" selection-end="1839" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/eivindhagen/training/CriminalIntent/CrimeLab.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="24" selection-start="1543" selection-end="1543" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/eivindhagen/training/CriminalIntent/CrimeFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="135" column="49" selection-start="4900" selection-end="4900" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3641#4103#0" expanded="true" />
+            <element signature="e#4092#4093#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/eivindhagen/training/CriminalIntent/CriminalIntentJSONSerializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="22" selection-start="2170" selection-end="2170" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1332#1339#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/eivindhagen/training/CriminalIntent/Crime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="20" selection-start="1411" selection-end="1411" vertical-scroll-proportion="0.35410765">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
